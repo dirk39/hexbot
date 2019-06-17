@@ -20,6 +20,9 @@ start:
 run:
 	docker exec --user ${UID}:${GID} hexbot-rust cargo run	
 
+build-wasm:
+	docker exec --user ${UID}:${GID} hexbot-rust wasm-pack build --scope npmdirk	
+
 install: 
 	docker exec --user ${UID}:${GID} hexbot-rust cargo install ${PARAM}	
 
